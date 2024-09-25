@@ -1,3 +1,5 @@
+using System.Net.Http.Json;
+
 namespace WalutaLol
 {
     public partial class Form1 : Form
@@ -7,11 +9,17 @@ namespace WalutaLol
         public Form1()
         {
             InitializeComponent();
-            currencies.Add("PLN", 1.0f);
-            currencies.Add("USD", 3.81f);
-            currencies.Add("EUR", 4.26f);
-            currencies.Add("RUB", 0.041f);
-            currencies.Add("BAT", 0.12f);
+
+            var http = new HttpClient() {
+                BaseAddress = new Uri("https://api.nbp.pl/")
+            };
+
+            var response = http.GetFromJsonAsync<List<Table>>("/api/exchangerates/tables/A?format=json/").Result;
+
+            foreach(var currency in response[0].rates)
+            {
+                currencies.Add(currency.code, currency.mid);
+            }
 
             foreach (var currency in currencies.Keys)
             {
