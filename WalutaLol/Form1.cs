@@ -13,7 +13,7 @@ namespace WalutaLol
             currencies.Add("RUB", 0.041f);
             currencies.Add("BAT", 0.12f);
 
-            foreach(var currency in currencies.Keys)
+            foreach (var currency in currencies.Keys)
             {
                 inputCurrency.Items.Add(currency);
                 outputCurrency.Items.Add(currency);
