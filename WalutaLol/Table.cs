@@ -12,10 +12,10 @@ namespace WalutaLol
         string table,
         string no,
         string effectiveDate,
-        Rates[] rates
+        Rate[] rates
     );
 
-    internal record class Rates
+    internal record class Rate
     (
         string currency,
         string code,

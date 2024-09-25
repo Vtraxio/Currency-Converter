@@ -47,6 +47,7 @@
             inputCurrency.Location = new Point(138, 27);
             inputCurrency.Name = "inputCurrency";
             inputCurrency.Size = new Size(121, 23);
+            inputCurrency.Sorted = true;
             inputCurrency.TabIndex = 0;
             // 
             // outputCurrency
@@ -56,6 +57,7 @@
             outputCurrency.Location = new Point(138, 71);
             outputCurrency.Name = "outputCurrency";
             outputCurrency.Size = new Size(121, 23);
+            outputCurrency.Sorted = true;
             outputCurrency.TabIndex = 3;
             // 
             // controlButton
